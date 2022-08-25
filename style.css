@@ -1,3 +1,56 @@
+html{
+    margin: 0;
+    height: 100%;
+    margin: 0px !important;
+    box-sizing: border-box;
+    display: grid;
+}
+
 body{
+    position: relative;
+    height: 100%;
+    margin: 0;
+    background-color: rgb(41, 40, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.library{
+    margin: 0;
+    width: 80%;
+    max-width: 1080px;
+    height: 80%;
     background-color: grey;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    justify-items: center;
+}
+
+.library>h2{
+    
+}
+
+.books{
+    background-color: rgb(70, 68, 68);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+}
+
+.library>button{
+    width: 33%;
+    font-size: 30pt;
+    border-radius:30px ;
+    border: none;
+}
+
+.book{
+    background-color: rgb(6, 83, 6);
+    width:clamp(150px, 180px, 250px) ;
+    justify-self: center;
 }
