@@ -56,3 +56,11 @@ function closeForm() {
     form.style.display = 'none';
 }
 
+function  newBook (){
+    let title = document.querySelector('#titleInput').value;
+    let author = document.querySelector('#authorInput').value;
+    new Book(title, author);
+    document.querySelector(".form").reset()
+    closeForm();
+}
+

@@ -28,13 +28,13 @@
         <button id="add" onclick="openForm()">+</button>
     </div>
     <div class="popup">
-        <form action="/action_page.php" class="form">
+        <form class="form">
             <h1>New book</h1>
             <label for="title"> Title</label>
-            <input type="text" name="title" id="" required>
+            <input type="text" name="title" id="titleInput" required>
             <label for="author"> Author</label>
-            <input type="text" name="author" id="" required>
-            <button type="submit" class="btn" onclick="">Add</button>
+            <input type="text" name="author" id="authorInput" required>
+            <button type="submit" class="btn" onclick="newBook()" id="addBtn">Add</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
