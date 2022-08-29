@@ -56,6 +56,36 @@ body{
     width:clamp(150px, 180px, 250px) ;
     justify-self: center;
     height: 220px;
+    padding: 1em;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.buttons{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.buttons>button{
+    margin-bottom: 5%;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    border: none;
+}
+
+.delete:hover{
+    background-color: rgba(255, 0, 0, 0.877);
+}
+
+.delete{
+    background-color: rgba(255, 145, 0, 0.877);
+}
+
+.delete>img{
+    max-width: 100px;
+    max-height: 30px;
+    padding: 2%;
 }
 
 .popup{

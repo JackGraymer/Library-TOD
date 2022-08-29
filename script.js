@@ -26,8 +26,11 @@ function displayBooks() {
     myLibrary.forEach(element => {
         
         let div = document.createElement('div')
-        div.innerHTML =     '<h4 class="title">'+ element.title +'</h4>' +
-                            '<h5 class="author">'+ element.author +'</h5>';
+        div.innerHTML =     '<div class="text"> <h4 class="title">'+ element.title +'</h4>' +
+                            '<h5 class="author">'+ element.author +'</h5> </div>' + 
+                            '<div class="buttons"> <button class="read">Read </button>'+
+                            '<button class="delete"><img src="deleteIcon.png" alt="Trash bin"> </button></div>';
+           
         div.classList.add('book')
                         
 
