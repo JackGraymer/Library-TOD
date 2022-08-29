@@ -70,3 +70,24 @@ function  newBook (){
     displayBooks()
 }
 
+let readBtn = document.querySelectorAll('.read')
+readBtn.forEach(element => {
+    element.addEventListener('click', read)
+})
+
+function read() {
+    let read = this.style.backgroundColor
+    if (read == 'rgb(84, 206, 84)') {
+        this.style.backgroundColor = ''
+    } else{this.style.backgroundColor = 'rgb(84, 206, 84)'}
+    console.log(read)
+}
+
+let deleteBtn = document.querySelectorAll('.delete')
+deleteBtn.forEach(element => {
+    element.addEventListener('click',deleteBook)
+})
+
+function deleteBook() {
+    console.log(this)
+}

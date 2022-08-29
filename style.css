@@ -28,10 +28,6 @@ body{
     justify-items: center;
 }
 
-.library>h2{
-    
-}
-
 .books{
     background-color: rgb(70, 68, 68);
     overflow: scroll;
