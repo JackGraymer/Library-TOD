@@ -24,25 +24,26 @@ let book = document.getElementsByClassName('book')
 
 function displayBooks() {
     myLibrary.forEach(element => {
-        let clone = book[0].cloneNode(true)
-        //Creates the title of books
-        title = document.createElement('h3')
-        titleText = document.createTextNode(element.title)
-        title.appendChild(titleText)
-        clone.appendChild(title)
-        books.appendChild(clone)   
         
-        //Creates author element in book  
-        author = document.createElement('h3')
-        authorText = document.createTextNode(element.author)
-        author.appendChild(authorText)
-        clone.appendChild(author)
-        books.appendChild(clone)   
+        let div = document.createElement('div')
+        div.innerHTML =     '<h4 class="title">'+ element.title +'</h4>' +
+                            '<h5 class="author">'+ element.author +'</h5>';
+        div.classList.add('book')
+                        
 
+        books.appendChild(div)
     });
 }
 
 displayBooks()
+
+function clearBooks() {
+    for(let i=book.length-1; i>-1; i--)
+        {
+    console.log(i)
+    book[i].remove()
+        }
+}
 
 let form = document.querySelector('.popup')
 
@@ -62,5 +63,7 @@ function  newBook (){
     new Book(title, author);
     document.querySelector(".form").reset()
     closeForm();
+    clearBooks()
+    displayBooks()
 }
 
