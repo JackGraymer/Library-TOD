@@ -32,6 +32,7 @@ function displayBooks() {
                             '<button class="delete"><img src="deleteIcon.png" alt="Trash bin"> </button></div>';
            
         div.classList.add('book')
+        div.setAttribute('id', element.id)
                         
 
         books.appendChild(div)
@@ -70,6 +71,9 @@ function  newBook (){
     displayBooks()
 }
 
+/* Bug, all the bottom is only created once in the beginning, everythime a book is added or deleted and the library re-displayed, does not have event listeners for the buttons. */
+
+
 let readBtn = document.querySelectorAll('.read')
 readBtn.forEach(element => {
     element.addEventListener('click', read)
@@ -89,5 +93,7 @@ deleteBtn.forEach(element => {
 })
 
 function deleteBook() {
-    console.log(this)
+    myLibrary.splice(this.parentElement.parentElement.id, 1)
+    clearBooks()
+    displayBooks()
 }
