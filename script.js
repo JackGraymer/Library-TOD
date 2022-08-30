@@ -32,10 +32,20 @@ function displayBooks() {
                             '<button class="delete"><img src="deleteIcon.png" alt="Trash bin"> </button></div>';
            
         div.classList.add('book')
-        div.setAttribute('id', element.id)
-                        
+        element.id = myLibrary.indexOf(element)
+        div.setAttribute('id', element.id)                       
 
         books.appendChild(div)
+
+        let readBtn = document.querySelectorAll('.read')
+        readBtn.forEach(element => {
+        element.addEventListener('click', read)
+        })
+
+        let deleteBtn = document.querySelectorAll('.delete')
+        deleteBtn.forEach(element => {
+        element.addEventListener('click',deleteBook)
+    })
     });
 }
 
@@ -66,6 +76,7 @@ function  newBook (){
     let author = document.querySelector('#authorInput').value;
     new Book(title, author);
     document.querySelector(".form").reset()
+
     closeForm();
     clearBooks()
     displayBooks()
@@ -94,6 +105,7 @@ deleteBtn.forEach(element => {
 
 function deleteBook() {
     myLibrary.splice(this.parentElement.parentElement.id, 1)
+    console.log(this.parentElement.parentElement.id)
     clearBooks()
     displayBooks()
 }
