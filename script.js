@@ -1,12 +1,24 @@
 let myLibrary = [];
 
-function Book(title, author) {
+/* function Book(title, author) {
   // the constructor...
   this.id = myLibrary.length
   this.title = title;
   this.author = author;
   myLibrary.push(this)
   
+} */
+
+//NEW class refactor
+
+class Book {
+
+    constructor(title, author){
+        this.id = myLibrary.length
+        this.title = title;
+        this.author = author;
+        myLibrary.push(this)
+    }
 }
 
 function addBookToLibrary() {
@@ -54,7 +66,7 @@ displayBooks()
 function clearBooks() {
     for(let i=book.length-1; i>-1; i--)
         {
-    console.log(i)
+    //console.log(i)
     book[i].remove()
         }
 }
@@ -105,7 +117,7 @@ deleteBtn.forEach(element => {
 
 function deleteBook() {
     myLibrary.splice(this.parentElement.parentElement.id, 1)
-    console.log(this.parentElement.parentElement.id)
+    //console.log(this.parentElement.parentElement.id)
     clearBooks()
     displayBooks()
 }
